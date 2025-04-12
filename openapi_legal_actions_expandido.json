@@ -1,0 +1,342 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Acciones GPT Legal Cannabis PR",
+    "version": "2.0.0",
+    "description": "Acciones legales para GPT experto en derecho civil y cannabis medicinal en Puerto Rico, incluyendo validaci\u00f3n de dominios, redacci\u00f3n legal, y b\u00fasqueda de jurisprudencia."
+  },
+  "servers": [
+    {
+      "url": "https://jsonplaceholder.typicode.com"
+    }
+  ],
+  "paths": {
+    "/generate-pdf": {
+      "post": {
+        "summary": "Genera un documento PDF en formato legal",
+        "operationId": "generatePDF",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "contenido": {
+                    "type": "string"
+                  },
+                  "nombreDocumento": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "contenido",
+                  "nombreDocumento"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "PDF generado exitosamente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "url": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/crear-reclamo": {
+      "post": {
+        "summary": "Redacta un reclamo extrajudicial con formato legal",
+        "operationId": "crearReclamo",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "hechos": {
+                    "type": "string"
+                  },
+                  "partes": {
+                    "type": "string"
+                  },
+                  "foro": {
+                    "type": "string"
+                  },
+                  "cronologia": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "hechos",
+                  "partes",
+                  "foro",
+                  "cronologia"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Reclamo generado correctamente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "documento": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/organizar-exhibits": {
+      "post": {
+        "summary": "Organiza los exhibits legales con sus enlaces y t\u00edtulos",
+        "operationId": "organizarExhibits",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "exhibits": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "titulo": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "titulo",
+                        "url"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "exhibits"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Exhibits organizados exitosamente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "formato": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/buscar-jurisprudencia": {
+      "get": {
+        "summary": "Busca jurisprudencia en Puerto Rico por palabra clave",
+        "operationId": "buscarJurisprudencia",
+        "parameters": [
+          {
+            "name": "termino",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista de jurisprudencias",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "caso": {
+                        "type": "string"
+                      },
+                      "resumen": {
+                        "type": "string"
+                      },
+                      "cita": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/verificar-nombre-comercial": {
+      "get": {
+        "summary": "Verifica si un nombre comercial est\u00e1 registrado en Puerto Rico",
+        "operationId": "verificarNombreComercial",
+        "parameters": [
+          {
+            "name": "nombre",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resultado de verificaci\u00f3n de nombre comercial",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "registrado": {
+                      "type": "boolean"
+                    },
+                    "estado": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/verificar-cumplimiento-hipaa": {
+      "get": {
+        "summary": "Valida si un sitio cumple con medidas de protecci\u00f3n de datos exigidas por HIPAA",
+        "operationId": "verificarCumplimientoHIPAA",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resultado del an\u00e1lisis de cumplimiento HIPAA",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ssl": {
+                      "type": "boolean"
+                    },
+                    "dmarc": {
+                      "type": "boolean"
+                    },
+                    "privacidad_valida": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/generar-demanda": {
+      "post": {
+        "summary": "Redacta una demanda judicial con estructura oficial",
+        "operationId": "generarDemanda",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "hechos": {
+                    "type": "string"
+                  },
+                  "partes": {
+                    "type": "string"
+                  },
+                  "foro": {
+                    "type": "string"
+                  },
+                  "petitorio": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "hechos",
+                  "partes",
+                  "foro",
+                  "petitorio"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Demanda generada correctamente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "documento": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
