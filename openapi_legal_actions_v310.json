@@ -3,11 +3,11 @@
   "info": {
     "title": "Acciones GPT Legal Cannabis PR",
     "version": "1.0.0",
-    "description": "Simulaci\u00f3n de acciones legales para GPT experto en derecho civil y cannabis medicinal en Puerto Rico."
+    "description": "Simulación de acciones legales para GPT experto en derecho civil y cannabis medicinal en Puerto Rico."
   },
   "servers": [
     {
-      "url": "https://jsonplaceholder.typicode.com"
+      "url": "https://legal-gpt-api.conyugalministr.repl.co"
     }
   ],
   "paths": {
@@ -58,7 +58,7 @@
     },
     "/validar-dominio": {
       "get": {
-        "summary": "Eval\u00faa si un dominio cumple con DMARC/SPF/DKIM",
+        "summary": "Evalúa si un dominio cumple con DMARC/SPF/DKIM",
         "operationId": "validarDominio",
         "parameters": [
           {
@@ -143,7 +143,7 @@
     },
     "/organizar-exhibits": {
       "post": {
-        "summary": "Organiza los exhibits legales con sus enlaces y t\u00edtulos",
+        "summary": "Organiza los exhibits legales con sus enlaces y títulos",
         "operationId": "organizarExhibits",
         "requestBody": {
           "required": true,
