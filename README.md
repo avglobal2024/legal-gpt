@@ -40,7 +40,7 @@ https://cdn.jsdelivr.net/gh/avglobal2024/legal-gpt/openapi_legal_actions_v310.js
 
 ## 📬 Contacto
 
-**Autor:** Ángel L. Villegas  
-**Email:** avillegas_pro@yahoo.com  
+**Autor:** AV Global Services 
+**Email:** rd.backup1@yahoo.com  
 **Entidad:** AV Global Services – Nexus Conyugal  
-**Licencias:** Uso bajo fines educativos o de activismo regulatorio en Puerto Rico
+**Licencias:** Uso bajo fines educativos o de activismo regulatorio en Puerto Rico.  El uso del mismo es bajo su responsabilidad dado que ha sido creado para fines de evaluacion de directivas y agentes GPT.
